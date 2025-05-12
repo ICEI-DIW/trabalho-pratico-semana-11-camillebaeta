@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalhes do Filme</title>
+  <script src="https://kit.fontawesome.com/819ce72409.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+ 
+
+</head>
+<body>
+
+ <!--             Cabeçalho                -->
+ <header class="header-detalhe">
+  <div class="marca">StarMovies</div>
+
+  <!-- menu mobile -->
+  <input type="checkbox" id="menuToggle" hidden>
+  <label for="menuToggle" class="menu-icon">
+      <i class="fa fa-bars"></i>
+      <i class="fa fa-times-circle"></i>
+  </label>
+
+  
+      <ul class="caixa-menuprincipal-detalhe">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Login</a></li>
+      </ul>
+ 
+  <div class="caixadepesquisa">
+      <input type="text" class="texto-pesquisa">
+  </div>
+</header>
+
+  <!-- Conteúdo Detalhado 
+  <main>
+    <section class="detalhes-filme">
+      <img id="imagem-filme" src="" alt="Imagem do Filme">
+      <h1 id="titulo-filme">Título do Filme</h1>
+      <p id="descricao-filme">Descrição curta do filme</p>
+      <p id="conteudo-filme">Conteúdo detalhado ou sinopse completa do filme.</p>
+      <p><strong>Categoria:</strong> <span id="categoria-filme"></span></p>
+      <p><strong>Diretor:</strong> <span id="autor-filme"></span></p>
+      <p><strong>Data de lançamento:</strong> <span id="data-filme"></span></p>
+    </section>
+  </main>-->
+
+
+   <main>
+        <section class="detalhes-filme">
+            <img id="imagem-filme" src="" alt="Imagem do Filme">
+            <h1 id="titulo-filme">Título do Filme</h1>
+            <p id="descricao-filme">Descrição curta do filme</p>
+            <p id="conteudo-filme">Conteúdo detalhado ou sinopse completa do filme.</p>
+            <p><strong>Categoria:</strong> <span id="categoria-filme"></span></p>
+            <p><strong>Diretor:</strong> <span id="autor-filme"></span></p>
+            <p><strong>Data de lançamento:</strong> <span id="data-filme"></span></p>
+        </section>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const filmeId = urlParams.get('id'); // Recupera o ID do filme da URL
+
+        fetch(`https://api.themoviedb.org/3/movie/${filmeId}?api_key=5ee5db70b3f9aa4806ef0a3fed911d83&language=pt-BR`)
+            .then(res => res.json())
+            .then(data => {
+                // Preenche os campos com as informações do filme
+                document.getElementById('imagem-filme').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+                document.getElementById('titulo-filme').innerText = data.title;
+                document.getElementById('descricao-filme').innerText = data.overview.slice(0, 150) + '...'; // Descrição curta
+                document.getElementById('conteudo-filme').innerText = data.overview; // Sinopse completa
+                document.getElementById('categoria-filme').innerText = data.genres.map(genre => genre.name).join(', '); // Exibe as categorias
+                document.getElementById('autor-filme').innerText = data.director || 'Não informado'; // Diretor (se disponível)
+                document.getElementById('data-filme').innerText = data.release_date;
+            })
+            .catch(error => {
+                console.error('Erro ao carregar detalhes do filme:', error);
+            });
+    </script>
+
+
+
+</body>
+
+</html>
