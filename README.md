@@ -11,11 +11,12 @@ Nessa etapa, vamos evoluir o projeto anterior e contemplar um ambiente de desenv
 
 **Print do teste da API com visualização do JSON**
 
-<<  ![(imgs/json.png)]>>
+![Print do JSON](imgs/json.png)
 
 **Print da aba NETWORK com requisições Fetch/XHR**
 
-<< ![(imgs/network.png)] >>
+![Print da aba Network](imgs/network.png)
+
 
 ## **Orientações Gerais**
 
