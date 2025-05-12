@@ -4,18 +4,18 @@ Nessa etapa, vamos evoluir o projeto anterior e contemplar um ambiente de desenv
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
+- Nome: Camille
+- Matricula: 895851
+- Proposta de projeto escolhida: Catálogo de filmes
 - Breve descrição sobre seu projeto:
 
 **Print do teste da API com visualização do JSON**
 
-<<  COLOQUE A IMAGEM AQUI >>
+<<  ![(imgs/json.png)]>>
 
 **Print da aba NETWORK com requisições Fetch/XHR**
 
-<<  COLOQUE A IMAGEM AQUI >>
+<< ![(imgs/network.png)] >>
 
 ## **Orientações Gerais**
 
