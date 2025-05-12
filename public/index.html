@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>starmovies</title>
+    <script src="https://kit.fontawesome.com/819ce72409.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>StarMovies</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+
+
+</head>
+<body>
+    <!--             Cabeçalho                -->
+    <header>
+        <div class="marca">StarMovies</div>
+    
+        <!-- menu mobile -->
+        <input type="checkbox" id="menuToggle" hidden>
+        <label for="menuToggle" class="menu-icon">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times-circle"></i>
+        </label>
+    
+        
+            <ul class="caixa-menuprincipal-detalhe">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+       
+        <div class="caixadepesquisa">
+            <input type="text" class="texto-pesquisa">
+        </div>
+    </header>
+
+    <!-- Conteúdo do site -->
+
+
+
+    <div class="carrossel">
+        <div class="slides">
+
+          <div class="slide ativo">
+            <img src="img/thor.jpg" alt="Slide 1">
+          </div>
+          <div class="slide">
+            <img src="img/kong.jpg" alt="Slide 2">
+          </div>
+          <div class="slide">
+            <img src="img/rogueone.jpg" alt="Slide 3">
+          </div>
+          <div class="slide">
+            <img src="img/starwars.jpg" alt="Slide 4">
+          </div>
+
+        </div>
+        <div class="indicadores">
+          <span class="ponto ativo"></span>
+          <span class="ponto"></span>
+          <span class="ponto"></span>
+          <span class="ponto"></span>
+        </div>
+      </div>
+      
+    <main>
+        <section class="titulofilmes"> 
+            <h1>filmes</h1> 
+            <h4>ordenados por popularidade</h4>
+        </section>
+               
+    
+   <section class="images">
+  <div id="tela" class="card-container"></div>
+</section>
+    
+<script src="app.js"></script>
+           
+   
+    
+
+    
+    </main>
+   
+    <script src="index.js"></script>
+</body>
+</html>
